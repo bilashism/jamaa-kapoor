@@ -1,0 +1,78 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "plugins": ["react", "jsx-a11y", "import", "unused-imports"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "eslint.workingDirectories": ["./backend", "./frontend"],
+  "overrides": [
+    {
+      "files": ["src/**/*.{js,jsx}"],
+      "rules": {
+        "react/prop-types": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              ["parent", "sibling"],
+              "index",
+              "object",
+              "type"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "./**/**\\.css",
+                "group": "type",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "newlines-between": "always",
+            "warnOnUnassignedImports": true
+          }
+        ]
+      }
+    }
+  ],
+  "ignorePatterns": ["**/node_modules/**", "dist"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-unused-vars": "warn",
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "warn",
+    "semi": "error"
+  }
+}
