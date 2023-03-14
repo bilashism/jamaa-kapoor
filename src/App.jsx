@@ -1,16 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const [value, setValue] = useState('poi');
-
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
+  const { items } = useSelector(store => store.cart);
 
   return (
-    <div className="">
-      <h1 className="text-blue-600">Hello world!</h1>
-    </div>
+    <>
+      <h1 className="text-blue-600">{items.length}</h1>
+    </>
   );
 }
 
