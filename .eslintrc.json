@@ -25,7 +25,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "eslint.workingDirectories": ["./backend", "./frontend"],
+  // "eslint.workingDirectories": ["./backend", "./frontend"],
   "overrides": [
     {
       "files": ["src/**/*.{js,jsx}"],
@@ -64,6 +64,7 @@
   ],
   "ignorePatterns": ["**/node_modules/**", "dist"],
   "rules": {
+    "no-param-reassign": ["error", { "props": false }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/label-has-associated-control": "warn",

@@ -1,11 +1,10 @@
 import React from 'react';
 
-const LoadingIcon = ({ className }) => {
-  return (
+const LoadingIcon = ({ className }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={`${
-        className ? className : 'w-10 stroke-green-500'
+        className || 'w-10 stroke-green-500'
       } inline-flex aspect-square items-center justify-center overflow-hidden bg-transparent bg-none [shape-rendering:auto]`}
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
@@ -18,9 +17,8 @@ const LoadingIcon = ({ className }) => {
         strokeWidth="6"
         strokeLinecap="round"
         strokeDasharray="164 56"
-      ></circle>
+       />
     </svg>
   );
-};
 
 export default LoadingIcon;

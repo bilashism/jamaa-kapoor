@@ -4,9 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   const defaultNavClasses = ``;
   const activeNavClasses = `text-fuchsia-600`;
-  const setClassNames = ({ isActive }) => {
-    return `${defaultNavClasses} ${isActive ? activeNavClasses : ''}`.trimEnd();
-  };
+  const setClassNames = ({ isActive }) =>
+    `${defaultNavClasses} ${isActive ? activeNavClasses : ''}`.trimEnd();
 
   return (
     <nav aria-label="main menu">

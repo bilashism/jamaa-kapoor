@@ -1,11 +1,7 @@
-import { useSelector } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './routes/router';
 
-const App = () => {
-  const { items } = useSelector(store => store.cart);
+import router from './routes/router';
 
-  return <RouterProvider router={router}></RouterProvider>;
-};
+const App = () => <RouterProvider router={router} />;
 
 export default App;

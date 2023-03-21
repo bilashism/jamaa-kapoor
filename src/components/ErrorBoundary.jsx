@@ -18,25 +18,27 @@ class ErrorBoundary extends Component {
       error,
       info
     });
-    console.log({ error, info });
   }
 
   render() {
-    if (this.state.info) {
+    const {
+      state: { info, error },
+      props: { children }
+    } = this;
+
+    if (info) {
       return (
         <details style={{ whiteSpace: 'pre-wrap' }}>
           <summary>Something went wrong! Click to learn more.</summary>
           <div className="">
-            <p className="">
-              {this.state.error && this.state.error.toString()}
-            </p>
+            <p className="">{error && error.toString()}</p>
             <br />
-            <p className="">{this.state.info.componentStack}</p>
+            <p className="">{info.componentStack}</p>
           </div>
         </details>
       );
     }
-    return this.props.children;
+    return children;
   }
 }
 

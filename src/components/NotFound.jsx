@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 
 const NotFound = () => {
-  let error = useRouteError();
+  const error = useRouteError();
 
   return (
     <div className="text-center">

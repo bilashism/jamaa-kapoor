@@ -9,7 +9,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    clearCart: state => (state.items = [])
+    clearCart: state => state.items.splice(0, state.items.length)
   }
 });
 
